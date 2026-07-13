@@ -10,12 +10,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "@react-navigation/native": "7.2.4",
-    "@react-navigation/native-stack": "7.15.1",
+    "@react-navigation/native": "7.3.8",
+    "@react-navigation/native-stack": "7.17.10",
     "react": "19.2.3",
-    "react-native": "0.85.3",
+    "react-native": "0.86.0",
     "react-native-safe-area-context": "5.8.0",
-    "react-native-screens": "4.25.1"
+    "react-native-screens": "4.26.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -24,11 +24,10 @@
     "@react-native-community/cli": "20.1.0",
     "@react-native-community/cli-platform-android": "20.1.0",
     "@react-native-community/cli-platform-ios": "20.1.0",
-    "@react-native/babel-preset": "0.85.3",
-    "@react-native/eslint-config": "0.85.3",
-    "@react-native/jest-preset": "0.85.3",
-    "@react-native/metro-config": "0.85.3",
-    "@react-native/typescript-config": "0.85.3",
+    "@react-native/babel-preset": "0.86.0",
+    "@react-native/eslint-config": "0.86.0",
+    "@react-native/metro-config": "0.86.0",
+    "@react-native/typescript-config": "0.86.0",
     "@types/jest": "^29.5.13",
     "@types/react": "^19.2.0",
     "@types/react-test-renderer": "^19.1.0",
