@@ -1,27 +1,71 @@
-// @ts-nocheck
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Button, Text} from 'react-native';
-import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeBottomTabNavigator } from '@react-navigation/bottom-tabs/unstable';
+import { ScrollView, Text } from 'react-native';
 
-const Stack = createNativeStackNavigator();
+const Tab = createNativeBottomTabNavigator();
 
-const Screen1 = ({navigation}) => (
-  <Button title="Go to screen 2" onPress={() => navigation.navigate('Screen2')} />
+const HomeScreen = () => (
+  <ScrollView contentInsetAdjustmentBehavior="automatic">
+    {Array.from({ length: 50 }, (_, i) => (
+      <Text key={i} style={{ padding: 16 }}>
+        Home {i + 1}
+      </Text>
+    ))}
+  </ScrollView>
 );
 
-const Screen2 = () => (
-  <Text>Screen 2</Text>
+const LibraryScreen = () => (
+  <ScrollView contentInsetAdjustmentBehavior="automatic">
+    <Text>Library</Text>
+  </ScrollView>
+);
+
+const SearchScreen = () => (
+  <ScrollView contentInsetAdjustmentBehavior="automatic">
+    {Array.from({ length: 50 }, (_, i) => (
+      <Text key={i} style={{ padding: 16 }}>
+        Search {i + 1}
+      </Text>
+    ))}
+  </ScrollView>
 );
 
 const App = () => (
   <NavigationContainer>
-    <Stack.Navigator screenOptions={{
-      headerTitle: () => <Text style={{outlineWidth: 1}}>Screen title</Text>
-    }}>
-      <Stack.Screen name="Screen1" component={Screen1} />
-      <Stack.Screen name="Screen2" component={Screen2} />
-    </Stack.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: true,
+        headerTransparent: true,
+        headerStyle: { backgroundColor: 'transparent' },
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: 'Home',
+          tabBarIcon: { type: 'sfSymbol', name: 'house' },
+        }}
+      />
+      <Tab.Screen
+        name="Library"
+        component={LibraryScreen}
+        options={{
+          title: 'Library',
+          tabBarIcon: { type: 'sfSymbol', name: 'books.vertical' },
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          title: 'Search',
+          tabBarSystemItem: 'search',
+          tabBarIcon: { type: 'sfSymbol', name: 'magnifyingglass' },
+          headerSearchBarOptions: { placeholder: 'Search' },
+        }}
+      />
+    </Tab.Navigator>
   </NavigationContainer>
 );
 
