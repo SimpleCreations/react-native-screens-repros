@@ -1,0 +1,26 @@
+diff --git a/node_modules/@react-navigation/bottom-tabs/lib/module/unstable/NativeBottomTabView.native.js b/node_modules/@react-navigation/bottom-tabs/lib/module/unstable/NativeBottomTabView.native.js
+index c861174..68a1e8a 100644
+--- a/node_modules/@react-navigation/bottom-tabs/lib/module/unstable/NativeBottomTabView.native.js
++++ b/node_modules/@react-navigation/bottom-tabs/lib/module/unstable/NativeBottomTabView.native.js
+@@ -309,7 +309,7 @@ export function NativeBottomTabView({
+           preventNativeSelection: tabBarSelectionEnabled === false,
+           badgeValue: tabBarBadge?.toString(),
+           title: tabTitle,
+-          nativeContainerStyle: {
++          style: {
+             backgroundColor: colors.background
+           },
+           specialEffects: {
+diff --git a/node_modules/@react-navigation/bottom-tabs/src/unstable/NativeBottomTabView.native.tsx b/node_modules/@react-navigation/bottom-tabs/src/unstable/NativeBottomTabView.native.tsx
+index f5ed44b..64da6e6 100644
+--- a/node_modules/@react-navigation/bottom-tabs/src/unstable/NativeBottomTabView.native.tsx
++++ b/node_modules/@react-navigation/bottom-tabs/src/unstable/NativeBottomTabView.native.tsx
+@@ -447,7 +447,7 @@ export function NativeBottomTabView({ state, navigation, descriptors }: Props) {
+               preventNativeSelection={tabBarSelectionEnabled === false}
+               badgeValue={tabBarBadge?.toString()}
+               title={tabTitle}
+-              nativeContainerStyle={{ backgroundColor: colors.background }}
++              style={{ backgroundColor: colors.background }}
+               specialEffects={{
+                 repeatedTabSelection: {
+                   popToRoot: tabBarRepeatedPressBehavior?.popToTop !== false,
